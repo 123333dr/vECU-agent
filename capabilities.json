@@ -1,0 +1,9 @@
+{
+  "id": "P0-DEMO",
+  "version": "1.0",
+  "demo": true,
+  "evidence": "人工构造的演示能力档案，未经过真实平台验证",
+  "interfaces": {"虚拟CAN": "supported", "以太网": "supported", "真实CAN": "unsupported", "无": "supported"},
+  "memory_gib": 4,
+  "timing_evidence": null
+}

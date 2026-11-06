@@ -1,0 +1,273 @@
+[
+  {
+    "input": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存2GiB。",
+    "requirement": {
+      "goal": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存2GiB。",
+      "interface": "虚拟CAN",
+      "hardware": false,
+      "timing": "无要求",
+      "latency_ms": null,
+      "memory_gib": 2.0,
+      "fault": "无"
+    },
+    "result": {
+      "status": "支持",
+      "score": 100,
+      "failures": [],
+      "missing": [],
+      "conditions": [],
+      "checks": [
+        {
+          "规则": "H01",
+          "状态": "满足",
+          "说明": "用户确认无物理硬件依赖",
+          "依据": "需求.hardware"
+        },
+        {
+          "规则": "I01",
+          "状态": "supported",
+          "说明": "虚拟CAN",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "T01",
+          "状态": "不适用",
+          "说明": "用户不考核时序",
+          "依据": "需求.timing"
+        },
+        {
+          "规则": "R01",
+          "状态": "满足",
+          "说明": "需求 2.0 / 容量 4 GiB",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        }
+      ],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  },
+  {
+    "input": "测试真实CAN电压，需要物理硬件，无时序要求，无故障注入。",
+    "requirement": {
+      "goal": "测试真实CAN电压，需要物理硬件，无时序要求，无故障注入。",
+      "interface": "真实CAN",
+      "hardware": true,
+      "timing": "无要求",
+      "latency_ms": null,
+      "memory_gib": null,
+      "fault": "无"
+    },
+    "result": {
+      "status": "不支持",
+      "score": null,
+      "failures": [
+        "该演示平台不支持真实硬件验证",
+        "接口不支持：真实CAN"
+      ],
+      "missing": [],
+      "conditions": [],
+      "checks": [
+        {
+          "规则": "H01",
+          "状态": "不满足",
+          "说明": "该演示平台不支持真实硬件验证",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "I01",
+          "状态": "unsupported",
+          "说明": "真实CAN",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "T01",
+          "状态": "不适用",
+          "说明": "用户不考核时序",
+          "依据": "需求.timing"
+        }
+      ],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  },
+  {
+    "input": "测试刹车功能。",
+    "requirement": {
+      "goal": "测试刹车功能。",
+      "interface": null,
+      "hardware": null,
+      "timing": null,
+      "latency_ms": null,
+      "memory_gib": null,
+      "fault": null
+    },
+    "result": {
+      "status": "信息不足",
+      "score": null,
+      "failures": [],
+      "missing": [
+        "请说明接口，或确认无通信",
+        "是否需要物理硬件？",
+        "是否有时序要求？",
+        "是否需要故障注入？"
+      ],
+      "conditions": [],
+      "checks": [],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  },
+  {
+    "input": "测试虚拟CAN丢弃报文，不需要物理硬件，无时序要求。",
+    "requirement": {
+      "goal": "测试虚拟CAN丢弃报文，不需要物理硬件，无时序要求。",
+      "interface": "虚拟CAN",
+      "hardware": false,
+      "timing": "无要求",
+      "latency_ms": null,
+      "memory_gib": null,
+      "fault": "丢弃"
+    },
+    "result": {
+      "status": "有条件支持",
+      "score": 80,
+      "failures": [],
+      "missing": [],
+      "conditions": [
+        "需配置虚拟 CAN 应用层故障注入，仅验证功能逻辑"
+      ],
+      "checks": [
+        {
+          "规则": "H01",
+          "状态": "满足",
+          "说明": "用户确认无物理硬件依赖",
+          "依据": "需求.hardware"
+        },
+        {
+          "规则": "I01",
+          "状态": "supported",
+          "说明": "虚拟CAN",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "T01",
+          "状态": "不适用",
+          "说明": "用户不考核时序",
+          "依据": "需求.timing"
+        },
+        {
+          "规则": "F01",
+          "状态": "需配置",
+          "说明": "需配置虚拟 CAN 应用层故障注入，仅验证功能逻辑",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        }
+      ],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  },
+  {
+    "input": "测试以太网通信，不需要物理硬件，要求500微秒，无故障注入。",
+    "requirement": {
+      "goal": "测试以太网通信，不需要物理硬件，要求500微秒，无故障注入。",
+      "interface": "以太网",
+      "hardware": false,
+      "timing": "有要求",
+      "latency_ms": 0.5,
+      "memory_gib": null,
+      "fault": "无"
+    },
+    "result": {
+      "status": "信息不足",
+      "score": null,
+      "failures": [],
+      "missing": [
+        "需补充相同负载、测量范围和统计口径下的时序验证证据"
+      ],
+      "conditions": [],
+      "checks": [
+        {
+          "规则": "H01",
+          "状态": "满足",
+          "说明": "用户确认无物理硬件依赖",
+          "依据": "需求.hardware"
+        },
+        {
+          "规则": "I01",
+          "状态": "supported",
+          "说明": "以太网",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "T01",
+          "状态": "未知",
+          "说明": "平台没有可用于保证响应时间的实测证据",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        }
+      ],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  },
+  {
+    "input": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存8GiB。",
+    "requirement": {
+      "goal": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存8GiB。",
+      "interface": "虚拟CAN",
+      "hardware": false,
+      "timing": "无要求",
+      "latency_ms": null,
+      "memory_gib": 8.0,
+      "fault": "无"
+    },
+    "result": {
+      "status": "不支持",
+      "score": null,
+      "failures": [
+        "内存需求超过单实例容量"
+      ],
+      "missing": [],
+      "conditions": [],
+      "checks": [
+        {
+          "规则": "H01",
+          "状态": "满足",
+          "说明": "用户确认无物理硬件依赖",
+          "依据": "需求.hardware"
+        },
+        {
+          "规则": "I01",
+          "状态": "supported",
+          "说明": "虚拟CAN",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        },
+        {
+          "规则": "T01",
+          "状态": "不适用",
+          "说明": "用户不考核时序",
+          "依据": "需求.timing"
+        },
+        {
+          "规则": "R01",
+          "状态": "不满足",
+          "说明": "需求 8.0 / 容量 4 GiB",
+          "依据": "人工构造的演示能力档案，未经过真实平台验证"
+        }
+      ],
+      "environment": "P0-DEMO",
+      "environment_version": "1.0",
+      "rule_version": "demo-1.0",
+      "scope": "仅覆盖接口、硬件、时序、内存及注入的基础筛选；未校验软件兼容性和全部资源。"
+    }
+  }
+]

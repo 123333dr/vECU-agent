@@ -1,0 +1,56 @@
+[
+  {
+    "goal": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存2GiB。",
+    "interface": "虚拟CAN",
+    "hardware": false,
+    "timing": "无要求",
+    "latency_ms": null,
+    "memory_gib": 2.0,
+    "fault": "无"
+  },
+  {
+    "goal": "测试真实CAN电压，需要物理硬件，无时序要求，无故障注入。",
+    "interface": "真实CAN",
+    "hardware": true,
+    "timing": "无要求",
+    "latency_ms": null,
+    "memory_gib": null,
+    "fault": "无"
+  },
+  {
+    "goal": "测试刹车功能。",
+    "interface": null,
+    "hardware": null,
+    "timing": null,
+    "latency_ms": null,
+    "memory_gib": null,
+    "fault": null
+  },
+  {
+    "goal": "测试虚拟CAN丢弃报文，不需要物理硬件，无时序要求。",
+    "interface": "虚拟CAN",
+    "hardware": false,
+    "timing": "无要求",
+    "latency_ms": null,
+    "memory_gib": null,
+    "fault": "丢弃"
+  },
+  {
+    "goal": "测试以太网通信，不需要物理硬件，要求500微秒，无故障注入。",
+    "interface": "以太网",
+    "hardware": false,
+    "timing": "有要求",
+    "latency_ms": 0.5,
+    "memory_gib": null,
+    "fault": "无"
+  },
+  {
+    "goal": "测试虚拟CAN解码，不需要物理硬件，无时序要求，无故障注入，内存8GiB。",
+    "interface": "虚拟CAN",
+    "hardware": false,
+    "timing": "无要求",
+    "latency_ms": null,
+    "memory_gib": 8.0,
+    "fault": "无"
+  }
+]
